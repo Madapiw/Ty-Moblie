@@ -6,4 +6,4 @@ Usage of:
     Oracle DB 19c
 
 ##Authors
- @apiwonsk @ptrybul
+    @apiwonsk @ptrybulo

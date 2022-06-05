@@ -10,7 +10,7 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="background-color: darkslategrey">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
         <a class="navbar-brand" href="/">Operator Telekomunikacyjny</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -46,14 +46,16 @@
 
             <div class="form-group">
                 <label>Welcome to the home page!</label>
-                <div>If you want to login, click  <a th:href="@{/main}"><b>here</b></a> or in the upper right corner.</div>
+                <div>If you want to login, click <a th:href="@{/main}"><b>here</b></a> or in the upper right corner.
+                </div>
             </div>
 
         </div>
     </div>
 </div>
 <footer class="fixed-bottom text-center text-muted">
-<div class="jumbotron p-4 text-light" style="margin-bottom: 15px; background-color: darkslategrey"> Wykonane przez: <a class="fw-bold"> Adam Piwoński, Patrycja Trybułowska </a></div>
+    <div class=" p-4 text-light" style="margin-bottom: 0; background-color: darkslategrey"> Wykonane przez:
+        <a class="fw-bold"> <b>Adam Piwoński, Patrycja Trybułowska </b></a></div>
 </footer>
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>

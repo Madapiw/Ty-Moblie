@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Main Page</title>
+    <title>Magazyn Page</title>
     <link rel="shortcut icon" href="https://clipground.com/images/telecom-icon-clipart-9.jpg">
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 
@@ -10,7 +10,7 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" >
     <div class="container">
         <a class="navbar-brand" href="/">Operator Telekomunikacyjny</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -26,14 +26,13 @@
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Main
+                    <a class="nav-link" href="#">Dashboard
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b
-                            style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
+                    <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
                 </li>
 
                 <li class="nav-item">
@@ -49,14 +48,11 @@
 
 <div class="container">
     <div class="row">
-
-        <div class="col-md-10 mt-5">
-            <label th:inline="text">Welcome <a style="color:lightskyblue; text-transform:capitalize"><b>[[${#httpServletRequest.remoteUser}]]</b></a>to the main page!</label>
-        </div>
-
+    <h1 class="col bg-info text-center rounded" style="padding: 5px"> Magazyn </h1>
     </div>
-</div>
 
+</div>
+</div>
 
 <footer class="fixed-bottom text-center text-muted">
     <div class=" p-4 text-light" style="margin-bottom: 0; background-color: darkslategrey"> Wykonane przez:

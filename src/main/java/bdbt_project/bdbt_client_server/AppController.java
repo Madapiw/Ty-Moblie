@@ -1,5 +1,6 @@
 package bdbt_project.bdbt_client_server;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Configuration
 public class AppController implements WebMvcConfigurer{
@@ -21,6 +23,8 @@ public class AppController implements WebMvcConfigurer{
 
         registry.addViewController("/main_admin").setViewName("admin/main_admin");
         registry.addViewController("/main_user").setViewName("user/main_user");
+
+        registry.addViewController("/magazyn").setViewName("admin/magazyn");
     }
 
 @Controller
@@ -48,4 +52,13 @@ public class DashboardController{
         return "user/main_user";
     }
 }
+    @Autowired
+    private MagazynDAO magazyndao;
+
+    @RequestMapping("/magazyn")
+    public String viewMagazynyPage(Model model){
+        List<Magazyn> MagazynList = magazyndao.list();
+        model.addAttribute("MagazynList",MagazynList);
+        return "magazyn";
+    }
 }

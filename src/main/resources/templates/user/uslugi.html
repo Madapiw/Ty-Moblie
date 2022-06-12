@@ -68,11 +68,11 @@
       <tbody>
 
       <tr th:each="usluga : ${UslugiList}">
-        <td th:text="${usluga.Id}">ID</td>
+        <td th:text="${usluga.ID_uslugi}">ID</td>
         <td th:text="${usluga.Nazwa}">Nazwa</td>
-        <td th:text="${usluga.Typ}"></td>
+        <td th:text="${usluga.Typ}">Typ</td>
         <td th:text="${usluga.Rodzaj}">Gdzie</td>
-        <td th:text="${usluga.Netto}">Cena Netto</td>
+        <td th:text="${usluga.Cena_netto}">Cena Netto</td>
         <td th:text="${usluga.Operator}">Operator</td>
       </tr>
       </tbody>

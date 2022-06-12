@@ -18,7 +18,7 @@ public class MagazynDAO {
     }
 
     public List<Magazyn> list(){
-        String query = "SELECT \"Magazyny\".\"ID_magazynu\", \"Magazyny\".\"Wielkosc\", \"Magazyny\".\"Nr_tel\", \"Operatorzy\".\"Nazwa\", \"Adresy\".\"Miasto\" from DOCKER.\"Magazyny\" left join \"Operatorzy\" on \"Magazyny\".\"ID_magazynu\"=\"Operatorzy\".\"ID_operatora\" left join \"Adresy\" on \"Magazyny\".\"ID_magazynu\" = \"Adresy\".\"ID_adresu\"";
+        String query = "SELECT M.\"ID_magazynu\", M.\"Wielkosc\", M.\"Nr_tel\", \"NazwaOp\" as Operator ,A2.\"Miasto\" from \"Operatorzy\" join \"Magazyny\" M on \"Operatorzy\".\"ID_operatora\" = M.\"ID_operatora\" join \"Adresy\" A2 on A2.\"ID_adresu\" = M.\"ID_adresu\"";
 
         List<Magazyn> MagazynList = jdbcTemplate.query(query, BeanPropertyRowMapper.newInstance(Magazyn.class));
         System.out.println(MagazynList);

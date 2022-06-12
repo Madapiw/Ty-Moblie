@@ -2,30 +2,30 @@ package bdbt_project.bdbt_client_server;
 
 
 public class Magazyn {
-    private int id;
+    private int ID_magazynu;
     private float wielkosc;
     private String nr_tel;
-    private String operator;
-    private String adres;
+    private String Operator;
+    private String Miasto;
 
     public Magazyn(){
 
     }
 
-    public Magazyn(int id, float wielkosc, String nr_tel, String operator, String adres) {
-        this.id = id;
+    public Magazyn(int id, float wielkosc, String nr_tel, String operator, String Miasto) {
+        this.ID_magazynu = id;
         this.wielkosc = wielkosc;
         this.nr_tel = nr_tel;
-        this.operator = operator;
-        this.adres = adres;
+        this.Operator = operator;
+        this.Miasto = Miasto;
     }
 
-    public int getId() {
-        return id;
+    public int getID_magazynu() {
+        return ID_magazynu;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setID_magazynu(int ID_magazynu) {
+        this.ID_magazynu = ID_magazynu;
     }
 
     public float getWielkosc() {
@@ -45,19 +45,19 @@ public class Magazyn {
     }
 
     public String getOperator() {
-        return operator;
+        return Operator;
     }
 
     public void setOperator(String operator) {
-        this.operator = operator;
+        this.Operator = operator;
     }
 
-    public String getAdres() {
-        return adres;
+    public String getMiasto() {
+        return Miasto;
     }
 
-    public void setAdres(String adres) {
-        this.adres = adres;
+    public void setMiasto(String miasto) {
+        this.Miasto = miasto;
     }
 
 
@@ -66,11 +66,11 @@ public class Magazyn {
     @Override
     public String toString() {
         return "Magazyn{" +
-                "id=" + id +
+                "id=" + ID_magazynu +
                 ", wielkosc=" + wielkosc +
                 ", nr_tel='" + nr_tel + '\'' +
-                ", operator='" + operator + '\'' +
-                ", adres='" + adres + '\'' +
+                ", operator='" + Operator + '\'' +
+                ", adres='" + Miasto + '\'' +
                 '}';
     }
 }

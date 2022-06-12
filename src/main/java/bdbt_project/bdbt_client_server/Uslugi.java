@@ -1,30 +1,30 @@
 package bdbt_project.bdbt_client_server;
 
 public class Uslugi {
-    private int Id;
+    private int ID_uslugi;
     private String Nazwa;
     private String Typ;
     private String Rodzaj;
-    private float Netto;
-    private String Operator;
+    private float Cena_netto;
+    private String NazwaOp;
 
     public Uslugi(){}
 
-    public Uslugi(int id, String nazwa, String typ, String rodzaj, float netto, String operator) {
-        Id = id;
+    public Uslugi(int idUslugi, String nazwa, String typ, String rodzaj, float cenanetto, String operator) {
+        ID_uslugi = idUslugi;
         Nazwa = nazwa;
         Typ = typ;
         Rodzaj = rodzaj;
-        Netto = netto;
-        Operator = operator;
+        Cena_netto = cenanetto;
+        NazwaOp = operator;
     }
 
-    public int getId() {
-        return Id;
+    public int getID_uslugi() {
+        return ID_uslugi;
     }
 
-    public void setId(int id) {
-        Id = id;
+    public void setID_uslugi(int ID_uslugi) {
+        this.ID_uslugi = ID_uslugi;
     }
 
     public String getNazwa() {
@@ -51,31 +51,31 @@ public class Uslugi {
         Rodzaj = rodzaj;
     }
 
-    public float getNetto() {
-        return Netto;
+    public float getCena_netto() {
+        return Cena_netto;
     }
 
-    public void setNetto(float netto) {
-        Netto = netto;
+    public void setCena_netto(float cena_netto) {
+        Cena_netto = cena_netto;
     }
 
     public String getOperator() {
-        return Operator;
+        return NazwaOp;
     }
 
     public void setOperator(String operator) {
-        Operator = operator;
+        NazwaOp = operator;
     }
 
     @Override
     public String toString() {
         return "Uslugi{" +
-                "Id=" + Id +
-                ", Nazwa='" + Nazwa + '\'' +
+                "Id=" + ID_uslugi +
+                ", Nazwa='" + NazwaOp + '\'' +
                 ", Typ='" + Typ + '\'' +
                 ", Rodzaj='" + Rodzaj + '\'' +
-                ", Netto=" + Netto +
-                ", Operator='" + Operator + '\'' +
+                ", Netto=" + Cena_netto +
+                ", Operator='" + NazwaOp + '\'' +
                 '}';
     }
 }

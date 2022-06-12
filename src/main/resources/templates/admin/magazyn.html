@@ -61,17 +61,17 @@
                     <th>Wielkość [m^2]</th>
                     <th>Numer Telefonu</th>
                     <th>Operator</th>
-                    <th>Adres</th>
+                    <th>Miasto</th>
                 </tr>
             </thread>
             <tbody>
 
                 <tr th:each="magazyn : ${MagazynList}">
-                    <td th:text="${magazyn.id}">ID</td>
+                    <td th:text="${magazyn.ID_magazynu}">ID</td>
                     <td th:text="${magazyn.wielkosc}">Wielkość</td>
                     <td th:text="${magazyn.nr_tel}">Numer Telefonu</td>
-                    <td th:text="${magazyn.operator}">Operator</td>
-                    <td th:text="${magazyn.adres}">Adres</td>
+                    <td th:text="${magazyn.Operator}">Operator</td>
+                    <td th:text="${magazyn.Miasto}">Miasto</td>
                 </tr>
             </tbody>
         </table>

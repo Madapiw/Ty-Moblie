@@ -18,7 +18,7 @@ public class UslugiDAO {
     }
 
     public List<Uslugi> list(){
-        String query = "select  U.\"ID_uslugi\", U.\"Nazwa\", U.\"Typ\", U.\"Rodzaj\", U.\"Cena_netto\" from \"Operatorzy\" join \"Uslugi\" U on \"Operatorzy\".\"ID_operatora\" = U.\"ID_operatora\"";
+        String query = "select  U.\"ID_uslugi\", U.\"Nazwa\" as Nazwa, U.\"Typ\", U.\"Rodzaj\", U.\"Cena_netto\", \"NazwaOp\" as Operator from \"Operatorzy\" join \"Uslugi\" U on \"Operatorzy\".\"ID_operatora\" = U.\"ID_operatora\"";
 
         List<Uslugi> UslugiList = jdbcTemplate.query(query, BeanPropertyRowMapper.newInstance(Uslugi.class));
         System.out.println(UslugiList);

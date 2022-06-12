@@ -13,14 +13,15 @@ public class MagazynDAO {
     private JdbcTemplate jdbcTemplate;
 
     public MagazynDAO(JdbcTemplate jdbcTemplate) {
+        super();
         this.jdbcTemplate = jdbcTemplate;
     }
 
     public List<Magazyn> list(){
-        String query = "SELECT * FROM DOCKER.\"Magazyny\"";
+        String query = "SELECT \"Magazyny\".\"ID_magazynu\", \"Magazyny\".\"Wielkosc\", \"Magazyny\".\"Nr_tel\", \"Operatorzy\".\"Nazwa\", \"Adresy\".\"Miasto\" from DOCKER.\"Magazyny\" left join \"Operatorzy\" on \"Magazyny\".\"ID_magazynu\"=\"Operatorzy\".\"ID_operatora\" left join \"Adresy\" on \"Magazyny\".\"ID_magazynu\" = \"Adresy\".\"ID_adresu\"";
 
         List<Magazyn> MagazynList = jdbcTemplate.query(query, BeanPropertyRowMapper.newInstance(Magazyn.class));
-
+        System.out.println(MagazynList);
         return MagazynList;
     }
 

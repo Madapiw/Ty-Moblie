@@ -1,7 +1,6 @@
 package bdbt_project.bdbt_client_server;
 
 
-
 public class Magazyn {
     private int id;
     private float wielkosc;

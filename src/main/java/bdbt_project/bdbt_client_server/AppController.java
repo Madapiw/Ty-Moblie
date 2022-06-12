@@ -12,8 +12,11 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+
 @Configuration
 public class AppController implements WebMvcConfigurer{
+
+
 
     public void addViewControllers(ViewControllerRegistry registry){
         registry.addViewController("/index").setViewName("index");
@@ -52,13 +55,6 @@ public class DashboardController{
         return "user/main_user";
     }
 }
-    @Autowired
-    private MagazynDAO magazyndao;
 
-    @RequestMapping("/magazyn")
-    public String viewMagazynyPage(Model model){
-        List<Magazyn> MagazynList = magazyndao.list();
-        model.addAttribute("MagazynList",MagazynList);
-        return "magazyn";
-    }
+
 }

@@ -1,9 +1,11 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
-    <title>Magazyn Page</title>
+    <title>Magazyny Page</title>
     <link rel="shortcut icon" href="https://clipground.com/images/telecom-icon-clipart-9.jpg">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 
 </head>
@@ -26,7 +28,7 @@
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Dashboard
+                    <a class="nav-link" th:href="@{main}">Dashboard
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -48,11 +50,36 @@
 
 <div class="container">
     <div class="row">
-    <h1 class="col bg-info text-center rounded" style="padding: 5px"> Magazyn </h1>
+    <h1 class="col text-white text-center rounded" style="padding: 10px; background-color: darkslategrey" > Magazyny </h1>
+    </div>
+
+    <div class="table text-center" cellpadding="20">
+        <table class="table-header">
+            <thread>
+                <tr>
+                    <th>ID</th>
+                    <th>Wielkość [m^2]</th>
+                    <th>Numer Telefonu</th>
+                    <th>Operator</th>
+                    <th>Adres</th>
+                </tr>
+            </thread>
+            <tbody>
+
+                <tr th:each="magazyn : ${MagazynList}">
+                    <td th:text="${magazyn.id}">ID</td>
+                    <td th:text="${magazyn.wielkosc}">Wielkość</td>
+                    <td th:text="${magazyn.nr_tel}">Numer Telefonu</td>
+                    <td th:text="${magazyn.operator}">Operator</td>
+                    <td th:text="${magazyn.adres}">Adres</td>
+                </tr>
+            </tbody>
+        </table>
+
     </div>
 
 </div>
-</div>
+
 
 <footer class="fixed-bottom text-center text-muted">
     <div class=" p-4 text-light" style="margin-bottom: 0; background-color: darkslategrey"> Wykonane przez:

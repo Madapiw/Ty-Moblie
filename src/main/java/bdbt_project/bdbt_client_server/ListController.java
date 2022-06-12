@@ -13,11 +13,22 @@ public class ListController {
     @Autowired
     private MagazynDAO magazyndao;
 
+    @Autowired
+    private UslugiDAO uslugidao;
+
     @RequestMapping("/magazyn")
     public String viewMagazynyPage(Model model){
         List<Magazyn> MagazynList = magazyndao.list();
         model.addAttribute("MagazynList", MagazynList);
 
         return "admin/magazyn";
+    }
+
+    @RequestMapping("/uslugi")
+    public String viewUslugiPage(Model model){
+        List<Uslugi> UslugiList = uslugidao.list();
+        model.addAttribute("UslugiList", UslugiList);
+
+        return "user/uslugi";
     }
 }

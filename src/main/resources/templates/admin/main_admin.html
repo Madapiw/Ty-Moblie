@@ -10,7 +10,7 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" >
+<nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color:#314f4f;">
     <div class="container">
         <a class="navbar-brand" href="/">Operator Telekomunikacyjny</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -37,7 +37,7 @@
 
                 <li class="nav-item">
                     <form method="post" th:action="@{/index}">
-                        <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                        <button class="btn text-white" style="background-color:#314f4f;" type="submit" onclick="successfullyLogout()" value="Sign Out">Logout</button>
                     </form>
                 </li>
 
@@ -48,12 +48,12 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md mt-5">
-            <button class="btn btn-primary" th:href="@{/magazyn}">Zobacz Magazyn</button>
-        </div>
-
         <div class="col-md-10 mt-5">
             <label th:inline="text">Welcome <a style="color:lightskyblue; text-transform:capitalize"><b>[[${#httpServletRequest.remoteUser}]]</b></a> to the main page! </label>
+        </div>
+
+        <div class="col-md-6 mt-5">
+            <a  class="text-center border-light" th:href="@{/magazyn}" style="border-color: #314f4f;border: 2px;size: 24px">Zobacz Magazyny</a>
         </div>
 
     </div>

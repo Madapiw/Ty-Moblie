@@ -1,6 +1,6 @@
 # ✨ BDBT Spring App for integration Oracle DB with backend and frontend. ✨
 
-[Repo-Link](https://gitlab-stud.elka.pw.edu.pl/-/ide/project/apiwonsk/bdbt_client_server/edit/main/)
+[Uni-Repo-Link](https://gitlab-stud.elka.pw.edu.pl/-/ide/project/apiwonsk/bdbt_client_server/edit/main/)
 
 ## Usage of:
    - Spring Initializr
@@ -15,6 +15,12 @@
 - [X] Functionality of web page
 - [X] Pretty CSS styling
 - [X] Communication with Oracle DB
+- [ ] Secure login credentials
+- [ ] Login through database authentication
+- [ ] Add more table views
+- [ ] Add performing actions on databases
+- [ ] Create WEB-INT configuration for static content
+- [ ] Apply best practices for user interaction
 
 ### Authors
-   @apiwonsk @ptrybulo
+    @Madapiw

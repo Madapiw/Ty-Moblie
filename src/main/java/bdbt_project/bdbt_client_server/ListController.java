@@ -31,4 +31,12 @@ public class ListController {
 
         return "user/uslugi";
     }
+
+    @RequestMapping("/dodajmagazyn")
+    public String addMagazyn(Model model){
+        Magazyn magazyn = new Magazyn();
+        model.addAttribute("magazyn", magazyn);
+        return "/nowy_magazyn";
+    }
+
 }

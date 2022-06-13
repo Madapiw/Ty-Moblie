@@ -10,11 +10,11 @@
 
 ## TODO
 - [X] Init Front-end
-- [ ] Init Back-end
-- [ ] Login page
-- [ ] Functionality of web page
-- [ ] Pretty CSS styling
-- [ ] Communication with Oracle DB
+- [X] Init Back-end
+- [X] Login page
+- [X] Functionality of web page
+- [X] Pretty CSS styling
+- [X] Communication with Oracle DB
 
 ### Authors
    @apiwonsk @ptrybulo

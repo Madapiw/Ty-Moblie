@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Nowy magazyn</title>
+    <link rel="shortcut icon" href="https://clipground.com/images/telecom-icon-clipart-9.jpg">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #314f4f">
+    <div class="container">
+        <a class="navbar-brand" href="/">Operator Telekomunikacyjny</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/index}">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{main}">Dashboard
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
+                </li>
+
+                <li class="nav-item">
+                    <form method="post" th:action="@{/index}">
+                        <button class="btn text-white" style="background-color: #314f4f" type="submit" onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                    </form>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="row">
+        <h1 class="col text-white text-center rounded" style="padding: 10px; background-color: darkslategrey" > Magazyny </h1>
+    </div>
+
+    <div class="row">
+        <a th:href="@{magazyn}">Wróć do magazynów</a>
+    </div>
+
+    <br/>
+
+    <form action="#" th:action="@{/dodajmagazyn}" th:object="@{adres}" method="post">
+        <table cellpadding="15px">
+            <tr>
+                <td>ID</td>
+                <td><input type="text" th:field="*{id_adresu}"></td>
+            </tr>
+            <tr>
+                <td>Lokal</td>
+                <td><input type="text" th:field="*{lokal}"></td>
+            </tr>
+            <tr>
+                <td>Kod pocztowy</td>
+                <td><input type="text" th:field="*{kodpocztowy}"></td>
+            </tr>
+            <tr>
+                <td>Ulica</td>
+                <td><input type="text" th:field="*{ulica}"></td>
+            </tr>
+            <tr>
+                <td>Miasto</td>
+                <td><input type="text" th:field="*{miasto}"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Zapisz</button></td>
+            </tr>
+        </table>
+
+    <form action="#" th:action="@{/dodajmagazyn}" th:object="@{magazyn}" method="post">
+        <table cellpadding="15px">
+            <tr>
+                <td>ID</td>
+                <td><input type="text" th:field="*{id_magazynu}"></td>
+            </tr>
+            <tr>
+                <td>Wielkość [m^2]</td>
+                <td><input type="text" th:field="*{wielkosc}"></td>
+            </tr>
+            <tr>
+                <td>Numer Telefonu</td>
+                <td><input type="text" th:field="*{nr_tel}"></td>
+            </tr>
+            <tr>
+                <td>Operator</td>
+                <td><input type="text" th:field="*{operator}"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Zapisz</button></td>
+            </tr>
+        </table>
+        <br/>
+
+
+    </form>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

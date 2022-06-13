@@ -2,10 +2,20 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Welcome Page</title>
+    <title>Ty Mobile</title>
     <link rel="shortcut icon" href="https://clipground.com/images/telecom-icon-clipart-9.jpg">
-
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+
+    <style>
+        .bg-image-custom {
+            height: 100vh;
+            min-height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1495584816685-4bdbf1b5057e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
 
@@ -40,23 +50,29 @@
     </div>
 </nav>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 mt-5">
-
-            <div class="form-group">
-                <label>Welcome to the home page!</label>
-                <div>If you want to login, click <a th:href="@{/main}"><b>here</b></a> or in the upper right corner.
-                </div>
+<header class="bg-image-custom">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="fw-light text-white" style="font-size: 72px">Ty Moblie</h1>
+                <p class="lead text-white" style="font-size: 24px">Lider w łączeniu ludzi</p>
             </div>
-
         </div>
     </div>
+</header>
+
+<div class="container">
+    <div class="text-xl-center flex-xl-row-reverse text-white jumbotron" style="margin: 30px; background-color: #314f4f">
+        <p>TY-Mobile Polska jako operator telekomunikacyjny świadczy usługi przy wykorzystaniu własnej sieci telekomunikacyjnej, która posiada punkty styku z sieciami telekomunikacyjnymi innych operatorów umożliwiając komunikowanie się użytkownikom Ty‑Mobile Polska z użytkownikami innego operatora.</p>
+        <br><p>Struktura sieci Ty‑Mobile Polska zapewnia efektywną jej rozbudowę i rekonfiguracje dostosowując się do nowych wymagań związanych z rozwojem rynku telekomunikacyjnego.</p>
+    </div>
 </div>
-<footer class="fixed-bottom text-center text-muted">
-    <div class=" p-4 text-light" style="margin-bottom: 0; background-color: darkslategrey"> Wykonane przez:
+
+<footer class="static-bottom text-center text-muted">
+    <div class=" p-4 text-light" style="margin-bottom: 0; background-color: darkslategrey;" > Wykonane przez:
         <a class="fw-bold"> <b>Adam Piwoński, Patrycja Trybułowska </b></a></div>
 </footer>
+
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>

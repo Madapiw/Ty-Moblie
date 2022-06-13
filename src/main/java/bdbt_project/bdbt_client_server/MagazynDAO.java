@@ -1,10 +1,15 @@
 package bdbt_project.bdbt_client_server;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.spel.ast.Operator;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
+import java.beans.BeanProperty;
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository
@@ -25,8 +30,19 @@ public class MagazynDAO {
         return MagazynList;
     }
 
-    public void save(Magazyn magazyn){
+    public void save(Magazyn magazyn, Adresy adres){
+        SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
+        String queryOperator = "SELECT \"ID_operatora\" from \"Operatorzy\" where \"Nazwa\"="+ magazyn.getOperator();
 
+        String operatorResult = jdbcTemplate.query(queryOperator, BeanPropertyRowMapper.newInstance(Magazyn.class)).toString();
+
+        insertActor.withTableName("Adresy").usingColumns("id_adresu","lokal","kodpocztowy","ulica","miasto");
+        BeanPropertySqlParameterSource adresyParams = new BeanPropertySqlParameterSource(adres);
+        insertActor.execute(adresyParams);
+
+//      Wysłanie danych magazynu
+
+        insertActor.withTableName("Magazyny").usingColumns("id_magazynu","wielkosc", "nr_tel", operatorResult,adres.getMiasto());
     }
 
     public Magazyn get(int id){
